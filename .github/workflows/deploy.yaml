@@ -1,4 +1,4 @@
-name: Deploy 
+name: Deploy
 
 permissions:
   contents: write
@@ -7,7 +7,7 @@ on:
   push:
     branches:
       - master
-      
+
 jobs:
   build-and-deploy:
     concurrency: ci-${{ github.ref }}

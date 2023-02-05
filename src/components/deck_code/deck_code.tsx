@@ -54,7 +54,6 @@ const DeckCodeComponent: React.FC<{
       </div>
       <h3 className="text-xl py-2 pl-2 md:text-2xl">Need Help?</h3>
       <p className="pl-2">To retrieve your deck code, follow these steps.</p>
-      <img className="object-scale-down w-96" src={selectDeckImg} />
     </div>
   )
 }

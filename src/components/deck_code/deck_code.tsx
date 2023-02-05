@@ -29,16 +29,16 @@ const DeckCodeComponent: React.FC<{
 
   return (
     <div>
-      <h2 className="text-4xl py-9">Step 1: Tell us your deck</h2>
+      <h2 className="text-2xl py-4 pl-2 md:text-4xl">Tell us your deck</h2>
       <div className="container bg-purple-500 sm:rounded-md py-8 sm:mb-8 text-center text-white">
-        <h3 className="break-normal font-normal text-4xl">
+        <h3 className="break-normal font-normal text-2xl">
           Enter your deck code
         </h3>
         <div className="mx-3 py-4">
           <div className="max-w-sm mx-auto p-1 bg-white rounded shadow flex items-center">
             <input
               type="text"
-              className="flex-auto appearance-none p-3 text-gray-600"
+              className="flex-auto appearance-none p-3 text-gray-800"
               value={code}
               onChange={handleCodeChange}
             />
@@ -52,8 +52,8 @@ const DeckCodeComponent: React.FC<{
           Invalid deck code
         </p>
       </div>
-      <h3 className="text-2xl py-4 px-2">Need Help?</h3>
-      <p className="px-2">To retrieve your deck code, follow these steps.</p>
+      <h3 className="text-xl py-2 pl-2 md:text-2xl">Need Help?</h3>
+      <p className="pl-2">To retrieve your deck code, follow these steps.</p>
       <img className="object-scale-down w-96" src={selectDeckImg} />
     </div>
   )

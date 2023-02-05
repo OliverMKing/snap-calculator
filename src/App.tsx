@@ -13,8 +13,15 @@ function App() {
     setUrlState({code: undefined})
   }
 
-  if (urlState.code.length !== 0)
-    console.log(codeToCards(urlDecodeCode(urlState.code)))
+  const deckCodeInvalid = (): boolean => {
+    const {code} = urlState
+    try {
+      codeToCards(code)
+      return false
+    } catch {
+      return true
+    }
+  }
 
   return (
     <div className="w-full container mx-auto">
@@ -32,7 +39,7 @@ function App() {
         </div>
       </div>
 
-      {urlState.code.length == 0 ? (
+      {deckCodeInvalid() ? (
         <DeckCodeComponent setUrlState={(s) => setUrlState(s)} />
       ) : (
         <div>hello</div>

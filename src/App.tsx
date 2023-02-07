@@ -5,6 +5,7 @@ import DeckCodeComponent from './components/deck_code/deck_code'
 import useUrlState from '@ahooksjs/use-url-state'
 import {Routes, Route} from 'react-router'
 import {codeToCards, urlDecodeCode} from './api/deck_code'
+import CalculateComponent from './components/calculate/calculate'
 
 function App() {
   const [urlState, setUrlState] = useUrlState({code: ''})
@@ -13,10 +14,11 @@ function App() {
     setUrlState({code: undefined})
   }
 
+  let cards: Set<String> | undefined = undefined
   const deckCodeInvalid = (): boolean => {
     const {code} = urlState
     try {
-      codeToCards(code)
+      cards = codeToCards(code)
       return false
     } catch {
       return true
@@ -39,10 +41,10 @@ function App() {
         </div>
       </div>
 
-      {deckCodeInvalid() ? (
+      {(deckCodeInvalid() || typeof(cards) === 'undefined') ? (
         <DeckCodeComponent setUrlState={(s) => setUrlState(s)} />
       ) : (
-        <div>hello</div>
+        <CalculateComponent cards={cards as unknown as Set<string>} /> // this is guaranteed because we check for undefined
       )}
     </div>
   )

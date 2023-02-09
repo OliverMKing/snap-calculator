@@ -51,7 +51,7 @@ const CalculateComponent: React.FC<{cards: Set<string>}> = ({cards}) => {
                 <select
                   value={requirement.card}
                   onChange={(e) => handleRequirementsCardChange(e, index)}
-                  className="bg-gray-50 border border-gray-300 text-gray-900 text-lg rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 text-lg rounded-lg focus:ring-purple-700 focus:border-purple-700 block p-2.5"
                 >
                   <option value={blank} disabled />
                   {Array.from(cards.keys())
@@ -66,7 +66,7 @@ const CalculateComponent: React.FC<{cards: Set<string>}> = ({cards}) => {
                 <select
                   value={requirement.byTurn}
                   onChange={(e) => handleRequirementsTurnChange(e, index)}
-                  className="bg-gray-50 border border-gray-300 text-gray-900 text-lg rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 text-lg rounded-lg focus:ring-purple-700 focus:border-purple-700 block p-2.5"
                 >
                   <option value={blank} disabled />
                   {range(MIN_TURN, MAX_TURN)

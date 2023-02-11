@@ -68,7 +68,7 @@ const DeckCodeComponent: React.FC<{
       <p className="px-2 pb-2 text">
         To retrieve your deck code from the game, follow the video below.
       </p>
-      <video controls className='md:px-2 w-full mb-4 md:w-80'>
+      <video controls className='md:px-2 w-full mb-4 md:w-80' muted={true}>
         <source src={Video} type="video/mp4" />
         Your browser does not support the video tag.
       </video>

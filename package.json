@@ -1,6 +1,6 @@
 {
   "name": "snap-calculator",
-  "homepage": "https://olivermking.github.io/snap-calculator",
+  "homepage": "https://snpcal.com",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

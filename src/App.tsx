@@ -35,9 +35,6 @@ function App() {
           >
             Marvel Snap Calculator
           </h1>
-          <p className="leading-normal text-gray-800 md:text-4xl text-2xl md:mb-8 text-center lg:text-left">
-            Make every card count for more
-          </p>
         </div>
       </div>
 

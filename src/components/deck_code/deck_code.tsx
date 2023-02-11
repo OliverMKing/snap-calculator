@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import {codeToCards, removeCodeComments} from '../../api/deck_code'
+import Video from "./tutorial.mp4"
 
 const DeckCodeComponent: React.FC<{
   setUrlState: (
@@ -12,7 +13,6 @@ const DeckCodeComponent: React.FC<{
 }> = ({setUrlState}) => {
   const [code, setCode] = useState('')
   const [codeErr, setCodeErr] = useState(false)
-
 
   const handleCodeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     try {
@@ -53,7 +53,25 @@ const DeckCodeComponent: React.FC<{
         </p>
       </div>
       <h3 className="text-xl py-2 pl-2 md:text-2xl">Need Help?</h3>
-      <p className="pl-2">To retrieve your deck code, follow these steps.</p>
+      <p className="pl-2 pb-2 text">
+        You can make a deck code online using a builder like{' '}
+        <a
+          className="text-purple-600 hover:underline"
+          href="https://marvelsnapzone.com/deck-builder/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Snap Zone's
+        </a>
+        .
+      </p>
+      <p className="pl-2 pb-2 text">
+        To retrieve your deck code from the game, follow the video below.
+      </p>
+      <video controls className='md:pl-2 w-full mb-4 md:w-80'>
+        <source src={Video} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
     </div>
   )
 }

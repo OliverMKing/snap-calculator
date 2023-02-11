@@ -1,5 +1,6 @@
 {
   "name": "snap-calculator",
+  "homepage": "https://olivermking.github.io/snap-calculator",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

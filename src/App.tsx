@@ -50,7 +50,7 @@ function App() {
   )
 }
 
-export const RoutedApp = () => {
+const RoutedApp = () => {
   return (
     <BrowserRouter>
       <Routes>
@@ -59,3 +59,5 @@ export const RoutedApp = () => {
     </BrowserRouter>
   )
 }
+
+export default RoutedApp

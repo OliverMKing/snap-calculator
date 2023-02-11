@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/snap-calculator/static/css/main.93d9a9f1.css",
-    "main.js": "/snap-calculator/static/js/main.8f9666f1.js",
+    "main.css": "/snap-calculator/static/css/main.0d83b3ae.css",
+    "main.js": "/snap-calculator/static/js/main.9e5aa351.js",
     "static/js/787.f71df8ca.chunk.js": "/snap-calculator/static/js/787.f71df8ca.chunk.js",
     "static/media/tutorial.mp4": "/snap-calculator/static/media/tutorial.448d2b571137ff130b94.mp4",
     "index.html": "/snap-calculator/index.html",
-    "main.93d9a9f1.css.map": "/snap-calculator/static/css/main.93d9a9f1.css.map",
-    "main.8f9666f1.js.map": "/snap-calculator/static/js/main.8f9666f1.js.map",
+    "main.0d83b3ae.css.map": "/snap-calculator/static/css/main.0d83b3ae.css.map",
+    "main.9e5aa351.js.map": "/snap-calculator/static/js/main.9e5aa351.js.map",
     "787.f71df8ca.chunk.js.map": "/snap-calculator/static/js/787.f71df8ca.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.93d9a9f1.css",
-    "static/js/main.8f9666f1.js"
+    "static/css/main.0d83b3ae.css",
+    "static/js/main.9e5aa351.js"
   ]
 }

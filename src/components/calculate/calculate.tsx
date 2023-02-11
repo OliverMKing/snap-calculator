@@ -1,15 +1,30 @@
 import React, {useState} from 'react'
-import {MAX_TURN, MIN_TURN, RequirementStrs} from '../../api/calculate'
+import {
+  calculate,
+  MAX_TURN,
+  MIN_TURN,
+  requirementsFromStrs,
+  RequirementStr
+} from '../../api/calculate'
 import {range} from '../../api/utils'
 
 const blank = ''
 
 const CalculateComponent: React.FC<{cards: Set<string>}> = ({cards}) => {
-  const [requirements, setRequirements] = useState<RequirementStrs[]>([
+  const [requirements, setRequirements] = useState<RequirementStr[]>([
     {card: blank, byTurn: blank}
   ])
 
-  console.log(requirements)
+  const reqs = requirementsFromStrs(requirements)
+  const canCalculate = reqs.length !== 0
+  let percentage: number | undefined = undefined
+  try {
+    if (canCalculate) {
+      percentage = calculate(reqs, cards)
+    }
+  } catch (err) {
+    console.error('Error calculating: ', err)
+  }
 
   const handleRequirementsCardChange = (
     e: React.ChangeEvent<HTMLSelectElement>,
@@ -42,11 +57,8 @@ const CalculateComponent: React.FC<{cards: Set<string>}> = ({cards}) => {
       <div className="flex flex-col">
         {requirements.map((requirement, index) => {
           return (
-            <React.Fragment>
-              <div
-                key={index}
-                className="pt-1 pl-2 flex flex-row gap-2 items-center"
-              >
+            <React.Fragment key={'requirement' + index}>
+              <div className="pt-1 pl-2 flex flex-row gap-2 items-center">
                 <span className="text-xl">Draw</span>
                 <select
                   value={requirement.card}
@@ -57,7 +69,7 @@ const CalculateComponent: React.FC<{cards: Set<string>}> = ({cards}) => {
                   {Array.from(cards.keys())
                     .sort()
                     .map((card) => (
-                      <option key={card} value={card}>
+                      <option key={'card' + card} value={card}>
                         {card}
                       </option>
                     ))}
@@ -72,7 +84,7 @@ const CalculateComponent: React.FC<{cards: Set<string>}> = ({cards}) => {
                   {range(MIN_TURN, MAX_TURN)
                     .map(String)
                     .map((turn) => (
-                      <option key={turn} value={turn}>
+                      <option key={'turn' + turn} value={turn}>
                         {turn}
                       </option>
                     ))}
@@ -97,6 +109,23 @@ const CalculateComponent: React.FC<{cards: Set<string>}> = ({cards}) => {
       >
         Add condition
       </button>
+
+      {canCalculate && percentage && (
+        <React.Fragment>
+          <h2 className="text-2xl pl-2 md:text-4xl">Your chances are</h2>
+          <div className="pl-2 text-purple-500 pt-2 md:pt-4 text-xl md:text-2xl">
+            {percentage}%
+          </div>
+          <div className="w-72 h-4 ml-2 bg-gray-200 rounded-full mb-8">
+            <div
+              className="h-4 bg-purple-500 rounded-full shimmer-purple"
+              style={{
+                width: `${percentage}}%`,
+              }}
+            ></div>
+          </div>
+        </React.Fragment>
+      )}
     </div>
   )
 }

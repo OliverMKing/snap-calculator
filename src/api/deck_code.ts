@@ -6,7 +6,6 @@ interface Deck {
   Cards: [{CardDefId: string}]
 }
 
-
 export const codeToCards = (code: string): Set<string> => {
   const cleaned = removeCodeComments(code)
   const decoded = Buffer.from(cleaned, 'base64').toString()
@@ -33,17 +32,13 @@ export const removeCodeComments = (code: string): string => {
 }
 
 const parseDeckJson = (str: string): Deck => {
-    return JSON.parse(str) as Deck
+  return JSON.parse(str) as Deck
 }
 
 const deckToCards = (deck: Deck): Set<string> => {
-    return new Set(deck.Cards.map(card => card.CardDefId))
+  return new Set(deck.Cards.map((card) => card.CardDefId))
 }
 
 export const urlEncodeCode = (code: string): string => {
   return encodeURIComponent(code)
-}
-
-export const urlDecodeCode = (encoded: string): string => {
-  return decodeURIComponent(encoded)
 }

@@ -1,6 +1,5 @@
 import React, {useState} from 'react'
 import {codeToCards, removeCodeComments} from '../../api/deck_code'
-import selectDeckImg from './select_deck.png'
 
 const DeckCodeComponent: React.FC<{
   setUrlState: (
@@ -18,7 +17,7 @@ const DeckCodeComponent: React.FC<{
     try {
       const code = e.target.value
       setCode(code)
-      const cards = codeToCards(e.target.value)
+      codeToCards(e.target.value) // just guaranteeing that this fn doesn't throw
       setUrlState({code: removeCodeComments(code)})
       setCodeErr(false)
     } catch (err) {

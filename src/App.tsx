@@ -4,7 +4,7 @@ import './App.css'
 import DeckCodeComponent from './components/deck_code/deck_code'
 import useUrlState from '@ahooksjs/use-url-state'
 import {Routes, Route} from 'react-router'
-import {codeToCards, urlDecodeCode} from './api/deck_code'
+import {codeToCards} from './api/deck_code'
 import CalculateComponent from './components/calculate/calculate'
 
 function App() {
@@ -41,7 +41,7 @@ function App() {
         </div>
       </div>
 
-      {(deckCodeInvalid() || typeof(cards) === 'undefined') ? (
+      {deckCodeInvalid() || typeof cards === 'undefined' ? (
         <DeckCodeComponent setUrlState={(s) => setUrlState(s)} />
       ) : (
         <CalculateComponent cards={cards as unknown as Set<string>} /> // this is guaranteed because we check for undefined
@@ -50,7 +50,7 @@ function App() {
   )
 }
 
-export default () => {
+export const RoutedApp = () => {
   return (
     <BrowserRouter>
       <Routes>

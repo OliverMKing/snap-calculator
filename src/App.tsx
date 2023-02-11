@@ -6,6 +6,11 @@ import useUrlState from '@ahooksjs/use-url-state'
 import {Routes, Route} from 'react-router'
 import {codeToCards} from './api/deck_code'
 import CalculateComponent from './components/calculate/calculate'
+import ReactGA from 'react-ga'
+
+// used for Google analytics
+const MEASUREMENT_ID = 'G-6BH0G65JXK'
+ReactGA.initialize(MEASUREMENT_ID)
 
 function App() {
   const [urlState, setUrlState] = useUrlState({code: ''})

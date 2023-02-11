@@ -50,7 +50,7 @@ const CalculateComponent: React.FC<{cards: Set<string>}> = ({cards}) => {
 
   return (
     <div>
-      <h2 className="text-2xl py-4 pb-8 pl-2 md:text-4xl">
+      <h2 className="text-2xl py-4 pb-8 px-2 md:text-4xl">
         Tell us what you want to calculate
       </h2>
 
@@ -58,7 +58,7 @@ const CalculateComponent: React.FC<{cards: Set<string>}> = ({cards}) => {
         {requirements.map((requirement, index) => {
           return (
             <React.Fragment key={'requirement' + index}>
-              <div className="pt-1 pl-2 flex flex-row gap-2 items-center">
+              <div className="pt-1 px-2 flex flex-row gap-2 items-center">
                 <span className="text-xl">Draw</span>
                 <select
                   value={requirement.card}
@@ -92,7 +92,7 @@ const CalculateComponent: React.FC<{cards: Set<string>}> = ({cards}) => {
               </div>
 
               {requirements.length !== index + 1 && (
-                <div className="pl-2 inline-flex flex-row items-center">
+                <div className="px-2 inline-flex flex-row items-center">
                   <hr className="w-32 h-px my-8 bg-gray-200 border-0" />
                   <span className="px-4">and</span>
                   <hr className="w-32 h-px my-8 bg-gray-200 border-0" />
@@ -105,18 +105,18 @@ const CalculateComponent: React.FC<{cards: Set<string>}> = ({cards}) => {
 
       <button
         onClick={handleAddCondition}
-        className="my-8 ml-2 bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded"
+        className="my-8 mx-2 bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded"
       >
         Add condition
       </button>
 
       {canCalculate && percentage && (
         <React.Fragment>
-          <h2 className="text-2xl pl-2 md:text-4xl">Your chances are</h2>
-          <div className="pl-2 text-purple-500 pt-2 md:pt-4 text-xl md:text-2xl">
+          <h2 className="text-2xl px-2 md:text-4xl">Your chances are</h2>
+          <div className="px-2 text-purple-500 pt-2 md:pt-4 text-xl md:text-2xl">
             {percentage}%
           </div>
-          <div className="w-72 h-4 ml-2 bg-gray-200 rounded-full mb-8">
+          <div className="w-72 h-4 mx-2 bg-gray-200 rounded-full mb-8">
             <div
               className="h-4 bg-purple-500 rounded-full shimmer-purple"
               style={{

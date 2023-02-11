@@ -29,7 +29,7 @@ const DeckCodeComponent: React.FC<{
 
   return (
     <div>
-      <h2 className="text-2xl py-4 pl-2 md:text-4xl">Tell us your deck</h2>
+      <h2 className="text-2xl py-4 px-2 md:text-4xl">Tell us your deck</h2>
       <div className="container bg-purple-500 sm:rounded-md py-8 sm:mb-8 text-center text-white">
         <h3 className="break-normal font-normal text-2xl">
           Enter your deck code
@@ -52,8 +52,8 @@ const DeckCodeComponent: React.FC<{
           Invalid deck code
         </p>
       </div>
-      <h3 className="text-xl py-2 pl-2 md:text-2xl">Need Help?</h3>
-      <p className="pl-2 pb-2 text">
+      <h3 className="text-xl py-2 px-2 md:text-2xl">Need Help?</h3>
+      <p className="px-2 pb-2 text">
         You can make a deck code online using a builder like{' '}
         <a
           className="text-purple-600 hover:underline"
@@ -65,10 +65,10 @@ const DeckCodeComponent: React.FC<{
         </a>
         .
       </p>
-      <p className="pl-2 pb-2 text">
+      <p className="px-2 pb-2 text">
         To retrieve your deck code from the game, follow the video below.
       </p>
-      <video controls className='md:pl-2 w-full mb-4 md:w-80'>
+      <video controls className='md:px-2 w-full mb-4 md:w-80'>
         <source src={Video} type="video/mp4" />
         Your browser does not support the video tag.
       </video>

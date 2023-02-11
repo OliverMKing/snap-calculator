@@ -29,7 +29,7 @@ const DeckCodeComponent: React.FC<{
 
   return (
     <div>
-      <h2 className="text-2xl py-4 px-2 md:text-4xl">Tell us your deck</h2>
+      <h2 className="text-2xl py-2 md:py-4 px-2 md:text-4xl">Tell us your deck</h2>
       <div className="container bg-purple-500 sm:rounded-md py-8 sm:mb-8 text-center text-white">
         <h3 className="break-normal font-normal text-2xl">
           Enter your deck code
@@ -38,14 +38,14 @@ const DeckCodeComponent: React.FC<{
           <div className="max-w-sm mx-auto p-1 bg-white rounded shadow flex items-center">
             <input
               type="text"
-              className="flex-auto appearance-none p-3 text-gray-800"
+              className="flex-auto appearance-none p-3 text-gray-800 focus:ring-purple-500 focus:border-purple-500"
               value={code}
               onChange={handleCodeChange}
             />
           </div>
         </div>
         <p
-          className={`font-normal text-yellow-400 text-3xl ${
+          className={`font-normal text-yellow-400 text-xl md:text-2xl ${
             !codeErr && 'invisible'
           }`}
         >
